@@ -1,4 +1,12 @@
+
+  /*jshint esversion: 6 */
 (function(window) {
+
+
+
+ 
+
+
 
   /*
    * Create a function named setMyLightGreen
@@ -13,6 +21,14 @@
    */
 
 
+   function setMyLightGreen(){
+
+       var lightId = this.dataset.lightId;
+       document.getElementById(lightId).className ="light-green";
+
+
+    }
+
   /*
    * Create a function named setMyLightClass
    * which takes two arguments: event, desiredClass
@@ -25,12 +41,34 @@
    * on this dom element, set the className to the value of desiredClass
    */
 
+   function setMyLightClass(event, desiredClass){
+    var lightId= this.dataset.lightId;
+    document.getElementById(lightId).className= desiredClass;
+
+   }
+
 
   /*
    * Declare 14 constants btn1, btn2, btn3,...
    * use a dom element selector method to assign each const
    * to the button that has an id of the same name.
    */
+
+   const btn1=  document.getElementById('btn1');
+   const btn2= document.getElementById('btn2');
+   const btn3= document.getElementById('btn3');
+   const btn4= document.getElementById('btn4');
+   const btn5= document.getElementById('btn5');
+   const btn6= document.getElementById('btn6');
+   const btn7= document.getElementById('btn7');
+   const btn8= document.getElementById('btn8');
+   const btn9= document.getElementById('btn9');
+   const btn10= document.getElementById('btn10');
+   const btn11= document.getElementById('btn11');
+   const btn12= document.getElementById('btn12');
+   const btn13= document.getElementById('btn13');
+   const btn14= document.getElementById('btn14');
+
 
 
   /*
@@ -42,6 +80,11 @@
    * to set the context to the correct object (the current context)
    */
 
+   btn1.addEventListener('click', function(){
+
+   setMyLightGreen.apply(this);
+
+   });
 
   /*
    * Add a click event listener to btn2
@@ -52,12 +95,19 @@
    * to set the context to the correct object
    */
 
+    btn2.addEventListener('click', () => {
+
+   setMyLightGreen.apply(btn2);
+
+   });
+
 
   /*
    * Add a click event listener to btn3
    * the handler method will be a reference to the setMyLightGreen function
    */
 
+   btn3.addEventListener('click',  setMyLightGreen);
 
   /*
    * Add a click event listener to btn4
@@ -70,6 +120,10 @@
    *   and passing two aditional arguments, event and 'light-green'
    */
 
+   btn4.addEventListener('click', function(){
+    setMyLightGreen.apply(btn4, [event, 'light-green']);
+
+   });
 
   /*
    * Add a click event listener to btn5
@@ -82,6 +136,9 @@
    *   and passing two aditional arguments, event and 'light-green'
    */
 
+   btn5.addEventListener('click', (event) => {
+    setMyLightClass.apply(btn5, [event, 'light-green']);
+   });
 
   /*
    * Add a click event listener to btn6
