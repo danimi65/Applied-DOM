@@ -68,6 +68,7 @@
    const btn12= document.getElementById('btn12');
    const btn13= document.getElementById('btn13');
    const btn14= document.getElementById('btn14');
+    const btn15= document.getElementById('btn15');
 
 
 
@@ -209,6 +210,7 @@
    * to set the context to the btn10 object
    */
 
+   const setLight10Green = setMyLightGreen.bind(btn10);
 
   /*
    * Add a click event listener to btn10
@@ -216,6 +218,11 @@
    * the body of the event handler function
    * will invoke the setLight10Green function
    */
+
+
+   btn10.addEventListener('click', function(){
+    setLight10Green();
+   });
 
 
   /*
@@ -227,6 +234,7 @@
    *     null, 'light-green'
    */
 
+   const setLight11Green = setMyLightClass.bind(btn11, null, 'light-green');
 
   /*
    * Add a click event listener to btn11
@@ -235,6 +243,10 @@
    * will invoke the setLight11Green function
    */
 
+   btn11.addEventListener('click', function(){
+    setLight11Green();
+   });
+
 
   /*
    * Declare a new const named setLight12Class
@@ -242,6 +254,8 @@
    * using the Function prototype method: bind
    * to set the context to the btn12 object
    */
+
+   const setLight12Class = setMyLightClass.bind(btn12);
 
 
   /*
@@ -253,6 +267,10 @@
    *   passing 2 additional arguments
    *     event, 'light-green'
    */
+
+   btn12.addEventListener('click', function(event){
+    setLight12Class(event, 'light-green');
+   });
 
 
   /*
@@ -269,6 +287,10 @@
    *     event, 'light-green'
    */
 
+   btn13.addEventListener('click', function(event){
+    setMyLightClass.bind(this) (event, 'light-green');
+
+   });
 
   /*
    * Add a click event listener to btn14
@@ -276,6 +298,8 @@
    * that is the result of invoking the Function prototype method, bind
    * on the setMyLightGreen function
    */
+
+   btn14.addEventListener('click', setMyLightGreen.bind(btn14));
 
 
   /*
@@ -285,6 +309,8 @@
    *
    * Hint: Do not declare a new function expression as an event handler.
    */
+
+   btn15.addEventListener('click', setMyLightClass.bind(btn15, event, 'light-green'));
 
 
 }(window));
